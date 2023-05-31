@@ -126,7 +126,7 @@ class OpenVPN {
       List<String>? bypassPackages,
       bool certIsRequired = false}) async {
     if (!initialized) throw ("OpenVPN need to be initialized");
-    if (!certIsRequired) config += "client-cert-not-required";
+    if (!certIsRequired) config += "";
     _tempDateTime = DateTime.now();
     _channelControl.invokeMethod("connect", {
       "config": config,
